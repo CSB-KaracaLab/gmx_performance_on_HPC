@@ -1,0 +1,51 @@
+; VARIOUS PREPROCESSING OPTIONS
+define                   = -DPOSRES
+
+; RUN CONTROL PARAMETERS
+integrator               = md
+dt                       = 0.002 ; time step (in ps)
+nsteps                   = 10000 ; number of steps 
+
+; OUTPUT CONTROL OPTIONS
+nstxout			= 500	; save coordinates every ps
+nstvout			= 500	; save velocities every ps
+nstenergy		= 500	; save energies every ps
+nstlog			= 500	; update log file every ps
+energygrps              = System
+
+; NEIGHBORSEARCHING PARAMETERS
+cutoff-scheme   = Verlet        ; Neighbor Searching Scheme
+nstlist         = 10            ; Frequency to update the neighbor list (irrelevant for Verlet)
+ns_type         = grid          ; Method to determine neighbor list (simple, grid)
+pbc             = xyz
+
+coulombtype     = PME           ; Treatment of long range electrostatic interactions
+rcoulomb        = 1.2           ; long range electrostatic cut-off
+
+vdwtype         = cutoff
+vdw-modifier    = force-switch
+rvdw            = 1.2
+rvdw-switch     = 1.0
+DispCorr        = no
+
+; Temperature coupling  
+tcoupl                   = v-rescale            ; Couple temperature to external heat bath according to Berendsen method
+tc-grps                  = System ; Use separate heat baths for Protein and Non-Protein groups
+tau_t                    = 0.1    ; Coupling time constant, controlling strength of coupling
+ref_t                    = XXX    ; Temperature of heat bath
+
+; Pressure coupling is off
+pcoupl			= no	 		; no pressure coupling in NVT
+
+; GENERATE VELOCITIES FOR STARTUP RUN
+gen_vel                  = yes    ; Assign velocities to particles by taking them randomly from a Maxwell distribution
+gen_temp                 = 310    ; Temperature to generate corresponding Maxwell distribution
+gen_seed                 = XXXX   ; Seed for (semi) random number generation. Different numbers give different sets of velocities
+
+; OPTIONS FOR BONDS    
+constraints              = all-bonds	; All bonds will be treated as constraints (fixed length)
+continuation		 = no		; first dynamics run
+constraint_algorithm 	 = lincs	; holonomic constraints
+lincs_iter		 = 1		; accuracy of LINCS
+lincs_order		 = 4		; also related to accuracy 
+

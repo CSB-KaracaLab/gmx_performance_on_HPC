@@ -1,0 +1,53 @@
+; RUN CONTROL PARAMETERS
+integrator               = md
+tinit                    = 0       ; Starting time
+dt                       = 0.002   ; 2 femtosecond time step for integration
+nsteps                   = XXX     ; Define the length of simulation i.e. for 1 ns write 500000
+
+; OUTPUT CONTROL OPTIONS
+nstxout                  = 250000 ; Writing full precision coordinates every 0.5 ns
+nstvout                  = 250000 ; Writing velocities every 0.5 ns
+nstlog                   = 5000  ; Writing to the log file every 10ps
+nstenergy                = 5000  ; Writing out energy information every 10ps
+nstxtcout                = 5000  ; Writing coordinates every 10ps
+
+energygrps               = Protein_DNA_SAM  Water_and_ions
+
+; NEIGHBORSEARCHING PARAMETERS
+cutoff-scheme   = Verlet        ; Neighbor Searching Scheme
+nstlist         = 10            ; Frequency to update the neighbor list (irrelevant for Verlet)
+ns_type         = grid          ; Method to determine neighbor list (simple, grid)
+pbc             = xyz
+
+coulombtype     = PME           ; Treatment of long range electrostatic interactions
+rcoulomb        = 1.2           ; long range electrostatic cut-off
+
+vdwtype         = cutoff
+vdw-modifier    = force-switch
+rvdw            = 1.2
+rvdw-switch     = 1.0
+DispCorr        = no
+
+; Temperature coupling
+tcoupl                   = v-rescale            ; Couple temperature to external heat bath according to Berendsen method
+tc-grps                  = Protein_DNA_SAM  Water_and_ions ; Use separate heat baths for Protein and Non-Protein groups
+tau_t                    = 0.1      0.1         ; Coupling time constant, controlling strength of coupling
+ref_t                    = XXX      XXX         ; Temperature of heat bath
+
+; Pressure coupling
+Pcoupl                   = Parrinello-Rahman	; Recommend for production (Shirts, JCTC 2013)
+Pcoupltype               = Isotropic
+tau_p                    = 0.5
+compressibility          = 4.5e-5
+ref_p                    = 1.0
+refcoord_scaling         = COM
+
+; GENERATE VELOCITIES FOR STARTUP RUN
+gen_vel                  = no     ; Assign velocities to particles by taking them randomly from a Maxwell distribution
+
+; OPTIONS FOR BONDS
+constraints              = all-bonds    ; All bonds will be treated as constraints (fixed length)
+continuation             = yes           ; first dynamics run
+constraint_algorithm     = lincs        ; holonomic constraints
+lincs_iter               = 1            ; accuracy of LINCS
+lincs_order              = 4            ; also related to accuracy
