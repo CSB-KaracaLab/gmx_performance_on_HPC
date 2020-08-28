@@ -127,7 +127,6 @@ Check how many ions are added into the system by (this changes each time):
 grep "K" complex-solvated.gro | wc -l
 grep "CL" complex-solvated.gro | wc -l
 grep "OW" complex-solvated.gro | grep SOL | wc -l
-
 ```
 These numbers should be updated in the topology file (complex.top)
 
