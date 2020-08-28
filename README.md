@@ -1,4 +1,4 @@
-## GROMACS performance optimization on the Turkish National Grid Resources TRUBA
+# GROMACS performance optimization on the Turkish National Grid Resources TRUBA
 
 <img src="fig.png" alt="logo" />
 
