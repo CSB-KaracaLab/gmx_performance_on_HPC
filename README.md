@@ -74,7 +74,8 @@ module load centos7.3/comp/gcc/6.4
 ```
 This will set the right environment to call Gromacs 2020 on TRUBA.
 
-To call GROMACS as **$gmx**
+To call GROMACS as **$gmx**:
+
 If you use bash:
 ```
 export gmx=/truba/sw/centos7.3/app/gromacs/2020-impi-mkl-PS2018-GOLD/bin/gmx
