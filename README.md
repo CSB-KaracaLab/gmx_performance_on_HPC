@@ -165,7 +165,7 @@ Version | Performance (ns/day)
 To draw the graph, we provided the jupyter notebook script under the graph directory. 
 
 ## Acknowledgements
-This research is supported by TÜBITAK under the 1002 support program with the project number 119Z828. We would like to thank Deniz Doğan ([@denizdgn](https://github.com/denizdgn)), who helped creating the used structure with the results of her work, and TUBITAK for their support.  We are also grateful to TUBITAK ULAKBIM for providing us TRUBA resources. 
+This research is supported by TUBITAK under the 1002 support program with the project number 119Z828. We would like to thank Deniz Doğan ([@denizdgn](https://github.com/denizdgn)), who helped creating the used structure with the results of her work, and TUBITAK for their support.  We are also grateful to TUBITAK ULAKBIM for providing us TRUBA resources. 
 
 ## Contact 
 ezgi.karaca@ibg.edu.tr
