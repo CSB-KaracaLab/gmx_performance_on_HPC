@@ -50,8 +50,8 @@ Here in the table below, the details are given about all simulations.
 - **log_files:** contains the log files of each simulations.
 - **graph:** contains the GPU Performance graph and jupyter notebook script to obtain the graph.
   
-## Application of the simulations
-
+## Application of the simulations \
+\
 **1) Connecting TRUBA**
 After applying for an account, you can connect to TRUBA by following the instructions on wiki page of TRUBA (http://wiki.truba.gov.tr/).
 
