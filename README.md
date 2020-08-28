@@ -109,7 +109,7 @@ Since ligand is not recognized by force field, we need to edit complex.gro manua
 	
 	:exclamation:Update the number of atoms that are in the header of the gro file accordingly (8643 to 8693)
 	
-	:exclamation:Upate the atom numbers of SAM so that the numbers are consecutive
+	:exclamation:Update the atom numbers of SAM so that the numbers are consecutive
 	
 - iii) Include the relevant topology parameters according to SAM addition
 	Add the following lines to complex.top file;
