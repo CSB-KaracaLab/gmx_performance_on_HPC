@@ -163,7 +163,7 @@ Version | Performance (ns/day)
 To draw the graph, you can use the jupyter notebook script under the graph directory. 
 
 ## Acknowledgements
-This research is supported by TUBITAK under the 1002 support program with the project number 119Z828. We would like to thank Deniz Doğan ([@denizdgn](https://github.com/denizdgn)), who helped creating the input structure and the MD pipeline used in this study.  We are also grateful to TUBITAK ULAKBIM for providing us the access to the TRUBA resources. 
+This research is supported by TUBITAK under the 1002 support program with the project number 119Z828. We would like to thank Deniz Doğan ([@denizdgn](https://github.com/denizdgn)), who initiated this study.  We are also grateful to TUBITAK ULAKBIM for providing us the access to the TRUBA resources. 
 
 ## Contact 
 ezgi.karaca@ibg.edu.tr
