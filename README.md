@@ -11,15 +11,15 @@ Therefore, high performance computing (HPC) system is a must to examine large sy
 
 ## Feautures of the Simulations 
 
-- For each run, we used a protein-DNA-ligand complex with 8693 number of atoms.
-- Investigated structure is created as a result of "Defining Epigenetic Methylation Mechanisms in Structural Biology Framework" project supported by BIDEB-2232 (1109B321700106) and HPC-EUROPA3 (INFRAIA-2016-1-730897).
+- For each run, we used a protein-DNA-ligand complex, composed of 8693 number of atoms.
+- The starting structure is coming from the "Exploring the Epigenetic Methylation Mechanisms within the context of Structural Biology" project supported by BIDEB-2232 (1109B321700106) and HPC-EUROPA3 (INFRAIA-2016-1-730897).
 - Amber14sb-PARMBSC1 force-field is used for each run.
-- Different GROMACS versions (GROMACS 5.1.4 and GROMACS 2020) have been chosen.
-- Among nine computing clusters on TRUBA, we chosed only three with GPU card (levrekv2-cuda, barbun-cuda and akya-cuda).
-- CPU/GPU ratio of the clusters on a single node are; 24/2 for levrekv2-cuda, 40/2 for barbun-cuda and 40/4 for akya-cuda.
-- Two different energy groups are defined; Protein_DNA_SAM and System.
+- Two different GROMACS versions (GROMACS 5.1.4 and GROMACS 2020) are probed.
+- Among nine computing clusters on TRUBA, we have chosen the ones with GPU cards (levrekv2-cuda, barbun-cuda and akya-cuda).
+- The CPU/GPU ratio of the clusters on a single node are; 24/2 for levrekv2-cuda, 40/2 for barbun-cuda and 40/4 for akya-cuda.
+- During simulations, we have also probed the impact of using different energy groups, as Protein_DNA_SAM and System.
 
-Here in the table below, the details are given about all simulations.
+Here are the several different run combinations we have tried:
 
  Version  | GROMACS version | Computing Cluster | CPU/GPU ratio | Energy Group 
  -------- | --------------- | ----------------- | ------------- | ------------
@@ -36,18 +36,18 @@ Here in the table below, the details are given about all simulations.
 11 | 2020 | Barbun-cuda | 40/1 | System
 12 | 2020 | Barbun-cuda | 40/2 | System
 
-## The directory structure of the repository
+## Our folders describe:
 
-- **application_example:** contains subdirectories of needed files for a proper MD run.
+- **application_example:** contains all the relevant input files provided under subdirectories to re-run our simulation combinations: 
   - **force_field:** contains the force field files.
-  - **initial_structures:** contains the initial structures of protein-DNA and ligand. Since ligand is not a standard molecule to be recognized by the force field, needed files for the ligand are created by acepype.
-  - **mdp_files:** contains subdirectories of needed MDP files for defined (Protein_DNA_SAM) and not_defined (System) energy groups.
-  - **scripts:** contains subdirectories of used scripts for defined (Protein_DNA_SAM) and not_defined (System) energy groups.
-- **slurm_files:** contains the slurm files of each simulations used for MD run.
-- **log_files:** contains the log files of each simulations.
+  - **starting_structures:** contains the starting structures our system (DNMT3A-DNA-SAM, pdb id: 6f57). Since the ligand parameters were not available in the force field, we have generated them with acepype (carried out by Deniz Doğan ([@denizdgn](https://github.com/denizdgn))).
+  - **mdp_files:** contains subdirectories of required .mdp simulation files, with defined (Protein_DNA_SAM) and generic (System) energy groups.
+  - **scripts:** contains the relevant TRUBA slurm files.
+- **slurm_files:** contains the slurm files of each the simulations listed in the above-given table.
+- **log_files:** contains the log files of each simulation.
 - **graph:** contains the GPU Performance graph and jupyter notebook script to obtain the graph.
   
-## Application of the simulations 
+## Running the simulations 
 **1) Connecting TRUBA**
 
 After applying for an account, you can connect to TRUBA by following the instructions on wiki page of TRUBA (http://wiki.truba.gov.tr/).
@@ -91,7 +91,7 @@ To generate gro and itp files (topology and parameter files) for "complex.pdb" f
 ```
 sbatch 01_generate-inital-gro.slurm
 ```
-Since ligand is not recognized by force field, we need to edit complex.gro manually:
+Since ligand is not recognized by the force field, we need to edit complex.gro manually:
 
 - i) To cap the charge at the beginning and the end of each DNA chain
 	These changes below should be done in complex.gro;
@@ -160,10 +160,10 @@ Version | Performance (ns/day)
 11 | 40.038
 12 | 40.012
 
-To draw the graph, we provided the jupyter notebook script under the graph directory. 
+To draw the graph, you can use the jupyter notebook script under the graph directory. 
 
 ## Acknowledgements
-This research is supported by TUBITAK under the 1002 support program with the project number 119Z828. We would like to thank Deniz Doğan ([@denizdgn](https://github.com/denizdgn)), who helped creating the used structure with the results of her work, and TUBITAK for their support.  We are also grateful to TUBITAK ULAKBIM for providing us TRUBA resources. 
+This research is supported by TUBITAK under the 1002 support program with the project number 119Z828. We would like to thank Deniz Doğan ([@denizdgn](https://github.com/denizdgn)), who helped creating the input structure and the MD pipeline used in this study.  We are also grateful to TUBITAK ULAKBIM for providing us the access to the TRUBA resources. 
 
 ## Contact 
 ezgi.karaca@ibg.edu.tr
