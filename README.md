@@ -12,6 +12,7 @@ Therefore, high performance computing (HPC) system is a must to examine large sy
 ## Feautures of the Simulations 
 
 - For each run, we used a protein-DNA-ligand complex, composed of 8693 number of atoms.
+- Together with the solvent and ions, the total number of atoms rises to 150891.
 - The starting structure is coming from the "Exploring the Epigenetic Methylation Mechanisms within the context of Structural Biology" project supported by BIDEB-2232 (1109B321700106) and HPC-EUROPA3 (INFRAIA-2016-1-730897).
 - Amber14sb-PARMBSC1 force-field is used for each run.
 - Two different GROMACS versions (GROMACS 5.1.4 and GROMACS 2020) are probed.
