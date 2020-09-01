@@ -48,6 +48,17 @@ Here are the several different run combinations we have tried:
 - **log_files:** contains the log files of each simulation.
 - **graph:** contains the GPU Performance graph and jupyter notebook script to obtain the graph.
   
+## To clone the repository
+
+```
+git clone https://github.com/CSB-KaracaLab/gmx_performance_on_HPC.git
+```
+or if you would like to get the content directly via wget:
+```
+wget https://github.com/CSB-KaracaLab/gmx_performance_on_HPC/archive/master.zip
+```
+
+
 ## Running the simulations 
 **1) Connecting TRUBA**
 
