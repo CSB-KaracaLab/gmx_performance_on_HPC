@@ -26,11 +26,11 @@ Here are the several different run combinations we have tried:
  -------- | --------------- | ----------------- | ------------- | ------------  | ------------
  1 | 5.1.4 | Levrekv2-cuda | 24/1 | Protein_DNA_SAM | 20
  2 | 5.1.4 | Levrekv2-cuda | 24/1 | System | 20
- 3 | 2020 | Barbun-cuda | 40/- | Protein_DNA_SAM |20
+ 3 | 2020 | Barbun-cuda | 40/1 | Protein_DNA_SAM |20
  4 | 2020 | Barbun-cuda | 40/1 | System | 20
  5 | 5.1.4 | Akya-cuda | 40/1 | Protein_DNA_SAM | 20
  6 | 5.1.4 | Akya-cuda | 40/1 | System | 20
- 7 | 2020 | Akya-cuda | 40/- | Protein_DNA_SAM | 20
+ 7 | 2020 | Akya-cuda | 40/1 | Protein_DNA_SAM | 20
  8 | 2020 | Akya-cuda | 40/1 | System | 20
  9 | 2020 | Akya-cuda | 40/2 | System | 20
 10 | 2020 | Akya-cuda | 40/1 | System | 1
