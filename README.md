@@ -22,20 +22,23 @@ Therefore, high performance computing (HPC) system is a must to examine large sy
 
 Here are the several different run combinations we have tried:
 
- Version  | GROMACS version | Computing Cluster | CPU/GPU ratio | Energy Group 
- -------- | --------------- | ----------------- | ------------- | ------------
- 1 | 5.1.4 | Levrekv2-cuda | 24/1 | Protein_DNA_SAM
- 2 | 5.1.4 | Levrekv2-cuda | 24/1 | System
- 3 | 5.1.4 | Akya-cuda | 40/1 | Protein_DNA_SAM
- 4 | 5.1.4 | Akya-cuda | 40/1 | System
- 5 | 2020 | Akya-cuda | 40/- | Protein_DNA_SAM
- 6 | 2020 | Akya-cuda | 40/1 | System
- 7 | 2020 | Akya-cuda | 40/2 | System
- 8 | 2020 | Akya-cuda | 40/3 | System
- 9 | 2020 | Akya-cuda | 40/4 | System
-10 | 2020 | Barbun-cuda | 40/- | Protein_DNA_SAM
-11 | 2020 | Barbun-cuda | 40/1 | System
-12 | 2020 | Barbun-cuda | 40/2 | System
+ Version  | GROMACS version | Computing Cluster | CPU/GPU ratio | Energy Group  | # of Threads
+ -------- | --------------- | ----------------- | ------------- | ------------  | ------------
+ 1 | 5.1.4 | Levrekv2-cuda | 24/1 | Protein_DNA_SAM | 20
+ 2 | 5.1.4 | Levrekv2-cuda | 24/1 | System | 20
+ 3 | 2020 | Barbun-cuda | 40/1 | Protein_DNA_SAM |20
+ 4 | 2020 | Barbun-cuda | 40/1 | System | 20
+ 5 | 5.1.4 | Akya-cuda | 40/1 | Protein_DNA_SAM | 20
+ 6 | 5.1.4 | Akya-cuda | 40/1 | System | 20
+ 7 | 2020 | Akya-cuda | 40/1 | Protein_DNA_SAM | 20
+ 8 | 2020 | Akya-cuda | 40/1 | System | 20
+ 9 | 2020 | Akya-cuda | 40/2 | System | 20
+10 | 2020 | Akya-cuda | 40/1 | System | 1
+11 | 2020 | Akya-cuda | 40/1 | System | 10
+12 | 2020 | Akya-cuda | 40/1 | System | 30
+13 | 2020 | Akya-cuda | 40/1 | System | 40
+14 | 2020 | Akya-cuda | 40/1 | System | 64
+
 
 ## Our folders describe:
 
@@ -161,16 +164,18 @@ Version | Performance (ns/day)
 ------- | -------------------
 1 | 6.374 
 2 | 6.939 
-3 | 37.557
-4 | 38.663
-5 | 14.924
-6 | 71.372
-7 | 69.463
-8 | 69.360
-9 | 71.072
-10 | 14.285
-11 | 40.038
-12 | 40.012
+3 | 14.285
+4 | 40.038
+5 | 37.557
+6 | 38.663
+7 | 14.924
+8 | 71.372
+9 | 71.031
+10| 29.205
+11| 67.225
+12| 70.780
+13|71.814
+14|46.030
 
 To draw the graph, you can use the jupyter notebook script under the graph directory. 
 
