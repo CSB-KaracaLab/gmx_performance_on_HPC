@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH -p akya-cuda
+#SBATCH -p barbun-cuda
 #SBATCH -A bsavas
-#SBATCH -J akya_5.1.4_pds
-#SBATCH --nodelist=akya7
+#SBATCH -J barbun_2020_pds
+#SBATCH --nodelist=barbun135
 #SBATCH -N 1
 #SBATCH -n 40
 #SBATCH --gres=gpu:1
@@ -14,7 +14,7 @@
 
 
 source /etc/profile.d/modules.sh
-module load centos7.3/app/gromacs/5.1.4-openmpi-1.8.8-gcc-4.8.5-E5V3-cuda
+module load centos7.3/app/gromacs/2020-impi-mkl-PS2018-GOLD-CUDA
 module load  centos7.3/lib/cuda/10.0
 
 module load centos7.3/lib/openmpi/1.8.8-gcc-4.8.5

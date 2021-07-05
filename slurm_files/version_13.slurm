@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH -p akya-cuda
 #SBATCH -A bsavas
-#SBATCH -J 10_threads
+#SBATCH -J 40_threads
 #SBATCH -N 1
 #SBATCH -n 40
 #SBATCH --gres=gpu:1
@@ -19,7 +19,7 @@ module load  centos7.3/lib/cuda/10.0
 module load centos7.3/lib/openmpi/1.8.8-gcc-4.8.5
 module load centos7.3/lib/acml/6.1.0-gfortan64
 
-export OMP_NUM_THREADS=10
+export OMP_NUM_THREADS=40
 echo "SLURM_NODELIST $SLURM_NODELIST"
 echo "NUMBER OF CORES $SLURM_NTASKS"
 

@@ -1,10 +1,11 @@
 #!/bin/bash
 #SBATCH -p akya-cuda
 #SBATCH -A bsavas
-#SBATCH -J akya_2020_sys_3gpu
+#SBATCH -J akya_2020_sys_1gpu
+#SBATCH --nodelist=akya7
 #SBATCH -N 1
 #SBATCH -n 40
-#SBATCH --gres=gpu:3
+#SBATCH --gres=gpu:1
 #SBATCH --time=15-00:00:00
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=buusrasavas@gmail.com
