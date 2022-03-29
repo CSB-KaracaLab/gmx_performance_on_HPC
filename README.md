@@ -2,9 +2,9 @@
 
 <img src="fig.png" alt="logo" />
 
-[![DOI:10.7240/jeps.920227](https://img.shields.io/badge/DOI-10.7240%2Fjeps.920227-red.svg)](https://doi.org/10.7240/jeps.920227) *(Published in Turkish)*
+[![DOI:10.7240/jeps.920227](https://img.shields.io/badge/DOI-10.7240%2Fjeps.920227-red.svg)](https://doi.org/10.7240/jeps.920227) 
 
-#### by Büşra Savaş and Ezgi Karaca
+#### by Büşra Savaş and Ezgi Karaca *(Published in Turkish)*
 
 ## Motivation
 
